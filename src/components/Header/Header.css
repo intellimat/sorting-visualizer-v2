@@ -1,0 +1,10 @@
+.headline {
+  /* Title (Sorting Visualizer) */
+  text-align: center;
+  font-size: 24px;
+  background-color: var(--light-grey);
+  font-weight: 600;
+  margin: 0 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
