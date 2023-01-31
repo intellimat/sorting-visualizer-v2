@@ -1,0 +1,21 @@
+.array-bar {
+  /* vertical bar representing a value of the array */
+  flex: 1;
+  background-color: var(--dark-grey);
+  margin: 0 1px;
+  align-self: flex-end;
+}
+
+.number {
+  display: none;
+  align-self: flex-end;
+  /*
+    visibility: hidden;
+    align-self: flex-end;
+    */
+}
+
+.array-bar-hover-effect:hover {
+  background-color: var(--dark-orange);
+  box-shadow: 0 0 15px var(--dark-grey);
+}

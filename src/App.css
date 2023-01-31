@@ -1,0 +1,9 @@
+html {
+  /* custom colors */
+  --dark-orange: rgb(179, 86, 11);
+  --very-dark-orange: rgb(160, 80, 15);
+  --light-orange: rgba(185, 127, 80, 0.568);
+  --light-grey: rgba(123, 175, 158, 0.486);
+  --dark-grey: rgba(57, 82, 74, 0.804);
+  --dark-green: rgba(28, 129, 21, 0.678);
+}

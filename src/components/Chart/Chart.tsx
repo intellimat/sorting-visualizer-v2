@@ -1,6 +1,8 @@
+import { Box } from "@mui/material";
 import React, { useState } from "react";
 import { InitialArraySize } from "../../config";
 import { getRandomArrayOfNumbers } from "../../utils";
+import ArrayBar from "./ArrayBar/ArrayBar";
 import useCustomEvents from "./hooks/useCustomEvents";
 
 function Chart() {
@@ -10,7 +12,13 @@ function Chart() {
 
   useCustomEvents(arrayOfNumbers, setArrayOfNumbers);
 
-  return <></>;
+  return (
+    <Box display="flex" flexDirection="row" height="60vh" margin="16px">
+      {arrayOfNumbers.map((value, index) => (
+        <ArrayBar index={index} value={value} key={index} />
+      ))}
+    </Box>
+  );
 }
 
 export default Chart;
