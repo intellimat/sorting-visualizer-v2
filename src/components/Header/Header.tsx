@@ -4,6 +4,7 @@ import { EventName } from "../../components-communication/types";
 import Button from "@mui/material/Button";
 import { Box, Slider } from "@mui/material";
 import "./Header.css";
+import { InitialArraySize, MaxArraySize } from "../../config";
 
 function Header() {
   return (
@@ -56,7 +57,8 @@ function Header() {
           onChange={(_, value) => {
             eventsBus.dispatch(EventName.SizeChange, { size: value as number });
           }}
-          defaultValue={50}
+          defaultValue={InitialArraySize}
+          max={MaxArraySize}
           aria-label="Default"
           valueLabelDisplay="auto"
         />

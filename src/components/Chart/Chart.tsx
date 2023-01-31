@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
-import eventsBus from "../../components-communication/eventsBus";
-import { EventName } from "../../components-communication/types";
+import React, { useState } from "react";
+import { InitialArraySize } from "../../config";
+import { getRandomArrayOfNumbers } from "../../utils";
 import useCustomEvents from "./hooks/useCustomEvents";
 
 function Chart() {
-  useCustomEvents();
-  useEffect(() => {
-    eventsBus.on(EventName.Sort, (d) => {
-      alert(JSON.stringify(d));
-    });
-  }, []);
+  const [arrayOfNumbers, setArrayOfNumbers] = useState(
+    getRandomArrayOfNumbers(InitialArraySize)
+  );
+
+  useCustomEvents(arrayOfNumbers, setArrayOfNumbers);
+
   return <></>;
 }
 
