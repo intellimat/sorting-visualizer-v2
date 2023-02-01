@@ -1,9 +1,6 @@
 import { Subject } from "rxjs";
-import { EventName, EventPayload } from "./types";
+import { Event } from "./types";
 
-const eventsBus = new Subject<{
-  type: EventName;
-  payload?: any; // EventPayload;
-}>();
+const eventsBus = new Subject<Event>();
 
 export default eventsBus;

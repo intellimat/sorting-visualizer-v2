@@ -8,3 +8,8 @@ export interface EventPayload {
   algorithmName?: string;
   size?: number;
 }
+
+export interface Event {
+  type: EventName;
+  payload?: any; // EventPayload;
+}
