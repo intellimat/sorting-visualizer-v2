@@ -5,14 +5,18 @@ import { getRandomArrayOfNumbers } from "../../../utils";
 
 function useCustomEvents(
   arrayOfNumbers: number[],
-  setArrayOfNumbers: (array: number[]) => void
+  setArrayOfNumbers: (array: number[]) => void,
+  sort: (algorithmName: string, array: number[]) => number[]
 ) {
   useEffect(() => {
-    eventsBus.on(EventName.SortingStarted, function sortingStartedCallback() {
-      setTimeout(() => {
+    eventsBus.on(
+      EventName.SortingStarted,
+      function sortingStartedCallback(data) {
+        const orderedArray = sort(data.algorithmName!, arrayOfNumbers);
+        setArrayOfNumbers(orderedArray);
         eventsBus.dispatch(EventName.SortingEnded);
-      }, 3000);
-    });
+      }
+    );
     eventsBus.on(EventName.NewArray, () => {
       setArrayOfNumbers(getRandomArrayOfNumbers(arrayOfNumbers.length));
     });

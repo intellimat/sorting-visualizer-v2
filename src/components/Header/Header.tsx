@@ -28,7 +28,7 @@ function Header() {
             variant="contained"
             onClick={() => {
               eventsBus.dispatch(EventName.SortingStarted, {
-                algorithmName: "mergeSort",
+                algorithmName: "mergesort",
               });
             }}
           >
