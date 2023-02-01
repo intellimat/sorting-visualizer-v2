@@ -10,13 +10,13 @@ export function getRandomArrayOfNumbers(size: number): number[] {
   return newArray;
 }
 
-// export function swap(array: number[], i: number, j: number) {
-//   if (i >= 0 && j >= 0 && i < array.length && j < array.length) {
-//     let temp = array[i];
-//     array[i] = array[j];
-//     array[j] = temp;
-//   } else console.log("\nCannot swap, indeces out of range.\n");
-// }
+export function swap(array: number[], i: number, j: number) {
+  if (i >= 0 && j >= 0 && i < array.length && j < array.length) {
+    let temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  } else console.log("\nCannot swap, indeces out of range.\n");
+}
 
 function _getRandomInteger(min: number, max: number) {
   min = Math.ceil(min);

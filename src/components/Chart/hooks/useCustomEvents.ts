@@ -8,7 +8,11 @@ function useCustomEvents(
   setArrayOfNumbers: (array: number[]) => void
 ) {
   useEffect(() => {
-    eventsBus.on(EventName.Sort, () => {});
+    eventsBus.on(EventName.SortingStarted, function sortingStartedCallback() {
+      setTimeout(() => {
+        eventsBus.dispatch(EventName.SortingEnded);
+      }, 3000);
+    });
     eventsBus.on(EventName.NewArray, () => {
       setArrayOfNumbers(getRandomArrayOfNumbers(arrayOfNumbers.length));
     });

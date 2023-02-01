@@ -10,7 +10,8 @@ interface Data {
 }
 
 export enum EventName {
-  Sort = "sort",
+  SortingStarted = "sorting started",
+  SortingEnded = "sorting ended",
   SizeChange = "change size",
   NewArray = "new array",
 }
