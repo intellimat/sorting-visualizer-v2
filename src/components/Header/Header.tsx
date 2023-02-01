@@ -1,11 +1,11 @@
 import React from "react";
-import eventsBus from "../../components-communication/eventsBus";
 import { EventName } from "../../components-communication/types";
 import Button from "@mui/material/Button";
 import { Box, Slider } from "@mui/material";
 import "./Header.css";
-import { InitialArraySize, MaxArraySize } from "../../config";
+import { InitialArraySize, MaxArraySize, MinArraySize } from "../../config";
 import useDisableButtons from "./hooks/useDisableButtons";
+import eventsBus from "../../components-communication/eventsBus";
 
 function Header() {
   const { buttonDisabled } = useDisableButtons();
@@ -27,8 +27,9 @@ function Header() {
             sx={{ m: 0.8 }}
             variant="contained"
             onClick={() => {
-              eventsBus.dispatch(EventName.SortingStarted, {
-                algorithmName: "mergesort",
+              eventsBus.next({
+                type: EventName.SortingStarted,
+                payload: { algorithmName: "mergeSort" },
               });
             }}
           >
@@ -39,8 +40,9 @@ function Header() {
             sx={{ m: 0.8 }}
             variant="contained"
             onClick={() => {
-              eventsBus.dispatch(EventName.SortingStarted, {
-                algorithmName: "heapsort",
+              eventsBus.next({
+                type: EventName.SortingStarted,
+                payload: { algorithmName: "heapsort" },
               });
             }}
           >
@@ -51,8 +53,9 @@ function Header() {
             sx={{ m: 0.8 }}
             variant="contained"
             onClick={() => {
-              eventsBus.dispatch(EventName.SortingStarted, {
-                algorithmName: "quicksort",
+              eventsBus.next({
+                type: EventName.SortingStarted,
+                payload: { algorithmName: "quicksort" },
               });
             }}
           >
@@ -63,9 +66,13 @@ function Header() {
           disabled={buttonDisabled}
           sx={{ width: "250px", m: 0.8 }}
           onChange={(_, value) => {
-            eventsBus.dispatch(EventName.SizeChange, { size: value as number });
+            eventsBus.next({
+              type: EventName.NewArray,
+              payload: { size: value },
+            });
           }}
           defaultValue={InitialArraySize}
+          min={MinArraySize}
           max={MaxArraySize}
           aria-label="Default"
           valueLabelDisplay="auto"
@@ -75,7 +82,9 @@ function Header() {
           sx={{ m: 0.8 }}
           variant="contained"
           onClick={() => {
-            eventsBus.dispatch(EventName.NewArray);
+            eventsBus.next({
+              type: EventName.NewArray,
+            });
           }}
         >
           Generate new array

@@ -16,6 +16,6 @@
 }
 
 .array-bar-hover-effect:hover {
-  background-color: var(--dark-orange);
+  background-color: var(--light-grey);
   box-shadow: 0 0 15px var(--dark-grey);
 }

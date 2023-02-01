@@ -4,7 +4,7 @@ import {
   quickSort,
 } from "../../../sorting-algorithms/index";
 
-function useSort() {
+function useSortingHistory() {
   const sort = (algorithmName: string, array: number[]): number[][] => {
     const newArray = [...array];
     let sortingAlgorithm;
@@ -28,4 +28,4 @@ function useSort() {
   return { sort };
 }
 
-export default useSort;
+export default useSortingHistory;

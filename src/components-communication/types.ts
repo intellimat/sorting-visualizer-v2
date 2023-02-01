@@ -1,17 +1,10 @@
-export interface EventsBus {
-  on: (eventName: EventName, callback: (eventData: Data) => void) => void;
-  dispatch: (eventName: EventName, data?: Data) => void;
-  remove: (eventName: EventName, callback: () => void) => void;
-}
-
-interface Data {
-  size?: number;
-  algorithmName?: string;
-}
-
 export enum EventName {
   SortingStarted = "sorting started",
   SortingEnded = "sorting ended",
-  SizeChange = "change size",
   NewArray = "new array",
+}
+
+export interface EventPayload {
+  algorithmName?: string;
+  size?: number;
 }

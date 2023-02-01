@@ -5,12 +5,9 @@ import { EventName } from "../../../components-communication/types";
 function useDisableButtons() {
   const [buttonDisabled, setButtonDisabled] = useState(false);
   useEffect(() => {
-    eventsBus.on(EventName.SortingStarted, function sortingStartedCallback() {
-      setButtonDisabled(true);
-    });
-
-    eventsBus.on(EventName.SortingEnded, () => {
-      setButtonDisabled(false);
+    eventsBus.subscribe((event) => {
+      if (event.type === EventName.SortingStarted) setButtonDisabled(true);
+      else if (event.type === EventName.SortingEnded) setButtonDisabled(false);
     });
   }, []);
 

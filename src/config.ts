@@ -1,6 +1,7 @@
-export const InitialArraySize = 100;
-export const MaxArraySize = 200;
+export const InitialArraySize = 50;
+export const MaxArraySize = 100;
+export const MinArraySize = 1;
 export const MinInteger = 1;
 export const MaxInteger = 300;
 export const BarRelativeHeight = 45; //vh
-export const FramesSpeed = 1500;
+export const FramesSpeed = 0;
