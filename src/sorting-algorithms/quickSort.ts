@@ -1,7 +1,9 @@
 import { swap } from "../utils";
 
 // Optimized quickSort! The pivot is randomized we partition each time the array into three sets!
-export function quickSort(array: number[]) {
+export function quickSort(array: number[]): number[][] {
+  // temporary
+  return [];
   if (Array.isArray(array)) quickSort_recursive(array, 0, array.length - 1);
 }
 

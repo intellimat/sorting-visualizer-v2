@@ -1,6 +1,8 @@
 import { swap } from "../utils";
 
-export function heapSort(array: number[]) {
+export function heapSort(array: number[]): number[][] {
+  // temporary
+  return [];
   buildMaxHeap(array);
   let heap_size = array.length;
 
