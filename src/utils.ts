@@ -15,7 +15,7 @@ export function swap(array: number[], i: number, j: number) {
     let temp = array[i];
     array[i] = array[j];
     array[j] = temp;
-  } else console.log("\nCannot swap, indeces out of range.\n");
+  } else console.warn("\nCannot swap, indeces out of range.\n");
 }
 
 function _getRandomInteger(min: number, max: number) {
