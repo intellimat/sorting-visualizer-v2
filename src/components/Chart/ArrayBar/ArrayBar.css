@@ -10,7 +10,7 @@
 .number {
   display: none;
   text-align: center;
-  color: var(--dark-grey);
+  color: var(--very-dark-grey);
   align-self: flex-end;
 }
 

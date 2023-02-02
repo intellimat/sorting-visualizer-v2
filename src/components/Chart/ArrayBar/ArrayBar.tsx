@@ -10,7 +10,6 @@ function ArrayBar({ index, value }: Props) {
   return (
     <div
       className="array-bar array-bar-hover-effect"
-      id={`array-bar-${index}`}
       style={{ height: `${(value / MaxInteger) * BarRelativeHeight}vh` }}
     >
       <div className="number"> {value} </div>
