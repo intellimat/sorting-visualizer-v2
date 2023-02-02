@@ -6,6 +6,7 @@ import "./Header.css";
 import { InitialArraySize, MaxArraySize, MinArraySize } from "../../config";
 import useDisableButtons from "./hooks/useDisableButtons";
 import eventsBus from "../../components-communication/eventsBus";
+import { AlgorithmName } from "../../sorting-algorithms/types";
 
 function Header() {
   const { buttonDisabled } = useDisableButtons();
@@ -29,7 +30,7 @@ function Header() {
             onClick={() => {
               eventsBus.next({
                 type: EventName.SortingStarted,
-                payload: { algorithmName: "mergeSort" },
+                payload: { algorithmName: AlgorithmName.MergeSort },
               });
             }}
           >
@@ -42,7 +43,7 @@ function Header() {
             onClick={() => {
               eventsBus.next({
                 type: EventName.SortingStarted,
-                payload: { algorithmName: "heapsort" },
+                payload: { algorithmName: AlgorithmName.HeapSort },
               });
             }}
           >
@@ -55,7 +56,7 @@ function Header() {
             onClick={() => {
               eventsBus.next({
                 type: EventName.SortingStarted,
-                payload: { algorithmName: "quicksort" },
+                payload: { algorithmName: AlgorithmName.QuickSort },
               });
             }}
           >
