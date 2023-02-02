@@ -27,7 +27,7 @@ function useEventManager(
   };
 
   useEffect(() => {
-    eventsBus.pipe(take(1)).subscribe(async (event) => {
+    eventsBus.pipe(take(1)).subscribe((event) => {
       if (event.type === EventName.NewArray) {
         handleNewArrayEvent(event);
       } else if (event.type === EventName.SortingStarted) {

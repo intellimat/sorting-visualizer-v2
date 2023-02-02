@@ -1,5 +1,6 @@
 .array-bar {
   /* vertical bar representing a value of the array */
+  display: flex;
   flex: 1;
   background-color: var(--dark-grey);
   margin: 0 1px;
@@ -8,14 +9,17 @@
 
 .number {
   display: none;
+  text-align: center;
+  color: var(--dark-grey);
   align-self: flex-end;
-  /*
-    visibility: hidden;
-    align-self: flex-end;
-    */
 }
 
 .array-bar-hover-effect:hover {
   background-color: var(--light-grey);
   box-shadow: 0 0 15px var(--dark-grey);
+}
+
+.array-bar-hover-effect:hover .number {
+  display: initial;
+  margin: auto;
 }
