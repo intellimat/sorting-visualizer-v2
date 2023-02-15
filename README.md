@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+# sorting-visualizer-v2
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a web application that shows how different sorting algorithms work. The three algorithms available are _mergesort_, _quicksort (3-way partitioning)_, _heapsort_.
 
-## Available Scripts
+### Stack
 
-In the project directory, you can run:
+- **React 18**
+- Typescript
+- RxJs
+- Material UI
 
-### `npm start`
+### Components
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Header
+- Chart
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The _Header_ component manages the user clicks and can enable or disable all the buttons if the sorting is currently being shown or not.
+The _Chart_ component is a container which maps every element of the list of numbers into a \<div> element which has an height proportional to the element value.
 
-### `npm test`
+### How sorting visualisation actually works
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Every time the users clicks on a sorting button (like merge sort), an event is dispatched on a shared event bus. The chart component, which subscribes to the same event bus, will handle the event dispatched by the Header component and begin the sorting. Once the sorting is completed, a sorting history (list of number[]) having key moments of sorting will be returned, and the Chart component will be able to update its list state based on the different state it had during the sorting algorithm
 
-### `npm run build`
+### More on the event bus
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+An event bus was not required at all to develop the communication between components (props suffice) but I thought it was a fun and interesting to use observable in React. RxJs is a reactive-programming library mainly used with Angular but can also be used with React to make some magic happens!
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Docker
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Github actions have been configured so that a new image is pushed to my docker hub account every time a commit has been pushed.
+Docker registry: _Docker Hub_
+Docker Image: _intellimat/sorting-visualizer-v2_
 
-### `npm run eject`
+### Deployment
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The application has been deployed on Vercel and you can access it through the following link: https://sorting-visualizer-v2-nu.vercel.app/
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Last but not least
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project was implemented for fun and in relative short amount of time hence there are things that can be improved!
+Feel free to reach out to me to ask me questions, give suggestions or to tell me that you appreciated this project :stuck_out_tongue_winking_eye:
