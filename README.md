@@ -14,12 +14,12 @@ This is a web application that shows how different sorting algorithms work. The 
 - Header
 - Chart
 
-The _Header_ component manages the user clicks and can enable or disable all the buttons if the sorting is currently being shown or not.
+The _Header_ component manages the user's clicks and can enable or disable all the buttons depending on whether the sorting history is currently being shown or not.
 The _Chart_ component is a container which maps every element of the list of numbers into a \<div> element which has an height proportional to the element value.
 
 ### How sorting visualisation actually works
 
-Every time the users clicks on a sorting button (like merge sort), an event is dispatched on a shared event bus. The chart component, which subscribes to the same event bus, will handle the event dispatched by the Header component and executes the specific sorting algorithm. Once the list of numbers has been sorted, a sorting history will be returned, and the Chart component will loop over the history to update its list state continuously (with a delay) until all the history has been shown.  For the sake of clarity, the history mentioned is a list of  lists of numbers (number[][]).
+Every time the user clicks on a sorting button (like merge sort), an event is dispatched on a shared event bus. The chart component, which subscribes to the same event bus, will handle the event dispatched by the Header component and execute the specific sorting algorithm. Once the list of numbers has been sorted, a sorting history will be returned, and the Chart component will loop over the history to update its list state (with a delay) until all the history has been shown.  For the sake of clarity, the history mentioned is a list of lists of numbers (number[][]).
 
 ### More on the event bus
 
