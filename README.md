@@ -1,6 +1,6 @@
 # sorting-visualizer-v2
 
-This is a web application that shows how different sorting algorithms work. The three algorithms available are _mergesort_, _quicksort (3-way partitioning)_, _heapsort_.
+This is a web application that shows how different sorting algorithms work. The three algorithms available are _mergesort_, _quicksort (3-way partitioning)_ and  _heapsort_.
 
 ### Stack
 
