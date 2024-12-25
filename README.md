@@ -27,11 +27,20 @@ An event bus was not required at all to develop the communication between compon
 
 ### Docker
 
-Github actions have been configured so that a new image is pushed to my docker hub account every time a commit has been pushed. <br>
-You can pull the image from the Docker hub: _docker pull intellimat/sorting-visualizer-v2:latest_ <br> and run it with a command like: _docker run -d -p 80:80 intellimat/sorting-visualizer-v2:latest_ <br>
-You should now be able to see the application running on _localhost_. <br> 
+Github actions have been configured so that a new image is pushed to my docker hub account every time a commit has been pushed to the master branch. <br>
 
 Docker Image: _intellimat/sorting-visualizer-v2_
+
+You can pull the image from the Docker hub:
+```
+docker pull intellimat/sorting-visualizer-v2:latest
+```
+and run it with a command like: 
+```
+docker run -d -p 80:80 intellimat/sorting-visualizer-v2:latest
+```
+
+You should now be able to see the application running on **localhost**, on default port 80.
 
 ### Deployment
 
